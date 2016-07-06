@@ -4,7 +4,7 @@
 
 Start your meteor project with a organized folder structure.
 
-### Packages used
+### Used packages
 
 ```
 autopublish              1.0.7  (For prototyping only) Publish the entire database to all clients
