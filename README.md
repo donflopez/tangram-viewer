@@ -2,7 +2,7 @@
 
 ***
 
-Start your meteor project with a organized folder structure.
+Start your meteor project with an organized folder structure.
 
 ### Used packages
 
