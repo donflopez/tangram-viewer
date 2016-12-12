@@ -1,16 +1,19 @@
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { BlazeLayout } from 'meteor/kadira:blaze-layout';
 
-// Load layouts
-// const layouts = '/imports/ui/layouts/';
-
-import '/imports/ui/layouts/landing.js';
+import '/imports/ui/layouts/landing/landing.js';
+import '/imports/ui/layouts/main/main';
 
 function render() {
-  BlazeLayout.render(this.name);
+  BlazeLayout.render( this.name );
 }
 
-FlowRouter.route('/landing', {
+FlowRouter.route( '/', {
+  name: 'main',
+  action: render,
+});
+
+FlowRouter.route( '/landing', {
   name: 'landing',
   action: render,
 });

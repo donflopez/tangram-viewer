@@ -1,0 +1,47 @@
+<template name="main">
+	<script src="/tangram.debug.js" type="text/javascript" charset="utf-8"></script>
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+	<div class="main">
+		<div id="map"></div>
+		{{> side maps=maps}}
+		{{#if active}}
+			{{> mapView}}
+		{{/if}}
+	</div>
+</template>
+
+<template name="side">
+	<div id="side" class="side">
+		<div id="side-button"><span class="arrowbtn arrowbtn-down"></span></div>
+		<ul class="map-list">
+			{{#each maps}}
+				{{> map}}
+			{{/each}}
+		</ul>
+	</div>
+</template>
+
+<template name="map">
+	<li class="map" style="background-image: url({{preview}})"></li>
+</template>
+
+<template name="mapView">
+	<div id="gui" class="menu">
+      <div class="dir">
+        <h4 class="title">Layers</h4>
+        <ul class="layers">
+          {{#each layers}}
+			{{> layer}}
+	      {{/each}}
+        </ul>
+      </div>
+    </div>
+</template>
+
+<template name="layer">
+	<li class="element {{opened}}"> <span class="name">{{ name }}</span> <span class="save" >save</span>
+		<div class="options">
+			<textarea name="cartocss" class="cartocss">{{cartocss}}</textarea>
+		</div>
+	</li>
+</template>
