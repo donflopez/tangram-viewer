@@ -16,11 +16,23 @@ import './main.html';
 
 Template.main.helpers({
 	maps: function() {
-		return Maps.find().fetch();
+		return Maps.find({}).fetch();
 	},
 
 	active: function() {
 		return Session.get('active');
+	}
+});
+
+Template.side.helpers({
+	opened: function () {
+		return Session.get('sideIsOpened') ? 'open' : 'closed';
+	}
+});
+
+Template.side.events({
+	'click #side-button': function () {
+		Session.set('sideIsOpened', !Session.get('sideIsOpened'));
 	}
 });
 
@@ -42,7 +54,8 @@ Template.map.events({
 
 			TH.addSource(window.sceneLayer, Carto.generateSource(viz.datasource));
 			let jpLayers = jsonP.metadata.layers;
-
+			viz.layers = viz.layers.reverse();
+			jpLayers = jpLayers.reverse();
 			viz.layers.forEach((ly, i) => {
 				if (ly.type === 'CartoDB') {
 					let layer = {

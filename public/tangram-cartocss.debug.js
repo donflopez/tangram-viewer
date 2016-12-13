@@ -9117,7 +9117,8 @@ var getSymbolizers = function getSymbolizers(layer) {
       size: getAttributeFeature(sym, sym === 'marker' ? 'width' : 'size', layer),
       width: getPx2Meters(getAttributeFeature(sym, 'width', layer)),
       border_color: getAlphaColor(getAttributeFeature(sym, 'line-color', layer), getAttributeFeature(sym, getPropertyName(sym, 'line-opacity'), layer)),
-      border_size: getAttributeFeature(sym, 'line-width', layer)
+      border_size: getAttributeFeature(sym, 'line-width', layer),
+      collide: false
     };
   }
 

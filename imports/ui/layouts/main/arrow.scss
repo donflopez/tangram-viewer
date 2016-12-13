@@ -3,9 +3,9 @@ $btn-size:                30px;
 $btn-arrowsize:           $btn-size / 4;
 
 // Button colors
-$btn-color:               hotpink;
+$btn-color:               #3d3;
 $btn-bg:                  #111;
-$btn-border:              hotpink;
+$btn-border:              #3d3;
 
 // Button hover colors
 $btn-hover-color:         #111;
@@ -21,7 +21,7 @@ $btn-hover-border-color:  white;
   border-radius: $btn-size;
   color: $btn-color;
   cursor: pointer;
-  left: 50%;
+  // left: 50%;
   line-height: $btn-size;
   margin-left: -($btn-size / 2);
   transition: all 0.25s ease-in-out;
@@ -53,8 +53,9 @@ $btn-hover-border-color:  white;
 }
 
 .arrowbtn-down {
-  bottom: 20px;
+  // bottom: 20px;
   &:after {
+
     margin-left: -($btn-arrowsize * .65);
     margin-top: -($btn-arrowsize * .65);
     border-bottom: 2px solid;

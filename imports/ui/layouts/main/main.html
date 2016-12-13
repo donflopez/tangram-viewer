@@ -2,6 +2,7 @@
 	<script src="/tangram.debug.js" type="text/javascript" charset="utf-8"></script>
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
 	<div class="main">
+		<img class="carto-logo" src="/logo_CARTO_negative_180.png" alt="" />
 		<div id="map"></div>
 		{{> side maps=maps}}
 		{{#if active}}
@@ -11,7 +12,7 @@
 </template>
 
 <template name="side">
-	<div id="side" class="side">
+	<div id="side" class="side {{opened}}">
 		<div id="side-button"><span class="arrowbtn arrowbtn-down"></span></div>
 		<ul class="map-list">
 			{{#each maps}}

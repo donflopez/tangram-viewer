@@ -8,26 +8,52 @@ body, html {
 .main {
 	width: 100%;
 	height: 100%;
+	content: "Carto Tangram Viewer";
+
+	.carto-logo {
+		position: absolute;
+		left: calc(50% - 230px);
+		top: calc(50% - 90px);
+	}
 }
 
 #side {
-	width: 250px;
+	width: 300px;
 	height: 100%;
 	position: absolute;
 	z-index: 10;
-	// left: -250px;
+	left: -250px;
+	transition: left ease 0.2s;
 
 	&.open {
 		left: 0;
+
+		#side-button {
+			transform: rotate(0deg);
+
+			&:hover {
+				transform-origin: 2px 17px;
+				transform: rotate(180deg);
+			}
+		}
 	}
 
 	#side-button {
-		// right: -10;
-		
+		right: 30px;
+		top: calc(100% - 40px);
 		position: absolute;
+		transform-origin: 2px 17px;
+		transform: rotate(180deg);
+
+		&:hover {
+			transform: rotate(0deg);
+		}
 	}
 
 	ul {
+		width: 250px;
+		height: 100%;
+		overflow: scroll;
 		margin: 0;
 		list-style-type: none;
 		padding: 0;
@@ -78,7 +104,7 @@ body, html {
 
 	.dir {
 		padding: 10px;
-		
+
 		h4.title {
 			margin: 0;
 		}
@@ -89,7 +115,7 @@ body, html {
 
 			li {
 				margin-left: 10px;
-				
+
 				&.element {
 					.cartocss {
 						transition: height ease .7s;
